@@ -1,0 +1,60 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #111827;
+  color: white;
+}
+
+.game {
+  min-height: 100vh;
+  text-align: center;
+  padding: 40px;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+.coins {
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+.case-button {
+  background: #7c3aed;
+  color: white;
+  border: none;
+  padding: 18px 35px;
+  font-size: 20px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.case-button:hover {
+  background: #6d28d9;
+}
+
+.result {
+  margin: 30px;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.inventory {
+  margin-top: 40px;
+}
+
+.inventory-list {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.item {
+  background: #1f2937;
+  padding: 20px;
+  width: 120px;
+  border-radius: 12px;
+  font-weight: bold;
+}
