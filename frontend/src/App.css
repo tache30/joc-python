@@ -6,9 +6,124 @@ body {
 }
 
 .game {
-  min-height: 100vh;
   text-align: center;
+  min-width: 0;
+}
+
+.game-page {
+  box-sizing: border-box;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 280px;
+  align-items: start;
+  gap: 32px;
   padding: 40px;
+}
+
+.game-sidebar {
+  display: grid;
+  gap: 20px;
+  padding-top: 24px;
+}
+
+.side-panel {
+  min-height: 150px;
+  padding: 24px;
+  border: 1px solid #374151;
+  border-radius: 16px;
+  background: #1f2937;
+  text-align: center;
+}
+
+.side-panel h2 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.side-panel-action {
+  display: grid;
+  place-content: center;
+  gap: 12px;
+  width: 100%;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.side-panel-action:hover {
+  border-color: #8b5cf6;
+  background: #293548;
+}
+
+.side-panel-action > span:first-child {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.side-panel-hint {
+  color: #cbd5e1;
+  font-size: 14px;
+}
+
+.trade-page {
+  box-sizing: border-box;
+  min-height: 100vh;
+  padding: 40px;
+  text-align: center;
+}
+
+.trade-page h1 {
+  margin: 24px 0 32px;
+}
+
+.back-button {
+  display: block;
+  padding: 10px 16px;
+  border: 1px solid #4b5563;
+  border-radius: 8px;
+  background: #1f2937;
+  color: white;
+  font: inherit;
+  cursor: pointer;
+}
+
+.back-button:hover {
+  background: #374151;
+}
+
+.trade-inventory {
+  margin: 0 auto;
+  max-width: 900px;
+}
+
+.trade-inventory h2 {
+  margin-bottom: 20px;
+}
+
+.trade-dropzone {
+  box-sizing: border-box;
+  display: grid;
+  place-items: center;
+  min-height: 220px;
+  max-width: 900px;
+  margin: 40px auto 0;
+  border: 2px dashed #6b7280;
+  border-radius: 16px;
+  color: #cbd5e1;
+  transition: border-color 150ms ease, background-color 150ms ease;
+}
+
+.trade-dropzone:hover {
+  border-color: #8b5cf6;
+}
+
+.trade-dropzone p {
+  margin: 0;
+  font-size: 18px;
+}
+
+.trade-items {
+  padding: 24px;
 }
 
 h1 {
@@ -57,4 +172,43 @@ h1 {
   width: 120px;
   border-radius: 12px;
   font-weight: bold;
+}
+
+.trade-inventory .item {
+  cursor: grab;
+  user-select: none;
+}
+
+.trade-inventory .item:active {
+  cursor: grabbing;
+}
+
+@media (max-width: 760px) {
+  .game-page {
+    grid-template-columns: 1fr;
+    padding: 24px;
+  }
+
+  .game-sidebar {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding-top: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .game-page {
+    padding: 20px 16px;
+  }
+
+  .trade-page {
+    padding: 24px 16px;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  .game-sidebar {
+    grid-template-columns: 1fr;
+  }
 }
